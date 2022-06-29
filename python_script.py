@@ -64,7 +64,7 @@ def create_tables():
         CREATE TABLE orders (
             FOREIGN KEY (user_id),
             FOREIGN KEY (service_id),
-            price decimal(2,1)
+            price decimal(2,1) NOT NULL
         )
         """
         )
