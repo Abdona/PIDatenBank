@@ -76,7 +76,7 @@ def create_tables():
         )
     conn = None
     try:
-        conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=7741domkRAT.")
+        conn = psycopg2.connect("host=127.16.5.15 dbname=postgres user=postgres password=test")
         cur = conn.cursor()
         for command in commands:
             cur.execute(command)
