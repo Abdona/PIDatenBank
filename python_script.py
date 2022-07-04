@@ -8,7 +8,7 @@ def db_interact():
         """,)
     conn = None
     try:
-        conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=7741domkRAT.")
+        conn = psycopg2.connect("host=172.16.5.10 dbname=postgres user=postgres password=test")
         cur = conn.cursor()
         for command in commands:
             string_to_return += f"executing following command: {command}"
