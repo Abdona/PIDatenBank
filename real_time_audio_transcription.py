@@ -36,10 +36,10 @@ def stop_listening():
 	st.session_state['run'] = False
 
 
-st.title('Get real-time transcription')
+st.title('Datenbankverwaltung')
 
 start, stop = st.columns(2)
-start.button('Start listening. To interact with the database say "Hey, query." ', on_click=start_listening)
+start.button('Start interaction.', on_click=start_listening)
 
 stop.button('Stop listening', on_click=stop_listening)
 
@@ -95,8 +95,7 @@ async def send_receive():
 						print(result)
 						st.session_state['text'] = result
 						st.markdown(st.session_state['text'])
-						if "Hey, query." in st.session_state['text']:
-							st.markdown(db_interact())
+						st.markdown(db_interact(st.session_state['text']))
 							# st.markdown(st.session_state['text']) == f"i am executing SQL command {}"
 
 				except websockets.exceptions.ConnectionClosedError as e:
